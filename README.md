@@ -25,6 +25,20 @@ Using a neural network to determine if my cat, Bubbles, is in a photo.
 
 #### One cause of the overfitting could be a lack of data, however, it don't have any more photos of Bubbles so instead I'll have to try some different techniques to correct the overfitting.
 
+# Attempt 2
+
+#### In order to improve the algorithm, I tried using image augmentation which is a technique used to artificially expand the size of the data set. I thought this might work since I suspect the cause of the overfitting is a lack a data.
+
+#### Image augmentation involves changing existing iamges in order to create new images for training. This could be through rotating, shifting, zooming or flipping the photo. 
+
+#### Below are the results after adding image augmentation:
+
+![attemp2](attempt2.png)
+
+#### This shows a great improvement, and we can see that the data is no longer overfitted. 
+
+
+
 
 
 

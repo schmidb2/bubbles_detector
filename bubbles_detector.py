@@ -6,6 +6,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
 import logging
+import time
 
 def plotImages(images_arr):
     fig, axes = plt.subplots(1, 5, figsize=(20,20))
@@ -101,7 +102,7 @@ model.compile(optimizer='adam',
 
 model.summary()
 
-EPOCHS = 30
+EPOCHS = 50
 history = model.fit(
     train_data_gen,
     steps_per_epoch=int(np.ceil(total_train / float(BATCH_SIZE))),
@@ -132,6 +133,11 @@ plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.savefig('./foo.png')
 plt.show()
+
+t = time.time()
+export_path_keras = "./{}.h5".format(int(t))
+model.save(export_path_keras)
+
 ##image_generator = ImageDataGenerator(rescaled=1./255)
 
 ##data = []
